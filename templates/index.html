@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Homework #4: Innovative Visualization - CSE 578 - Fall 2023</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="static/rchand44.js"></script>
+    <style>
+        body {
+        background-color: black;
+        margin: 0;
+        }
+
+        #exoplanets {
+        position:fixed;
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        pointer-events: none;
+        }
+
+        #heading {
+	    font-size: 60px;
+	    font-style: oblique 23deg;
+	    font-family: "Times New Roman", Times, serif;
+	    font-weight: 700;
+	    text-align: center;
+	    background-clip: text;
+	    -webkit-background-clip: text;
+	    color: transparent;
+	    background-image: url('static/headingbackground.png');
+	   }
+
+        #description {
+	    font-size: 20px;
+	    font-style: oblique 23deg;
+	    font-family: "Arial", Times, serif;
+	    font-weight: 100;
+	    text-align: left;
+	    color: white;
+	   }
+
+        #parallelChart {
+        float:left;
+        width:1400px;
+        height:700px;
+        padding:10px;
+        }
+
+        .axisWhite line{
+        stroke: white;
+        }
+
+        .axisWhite path{
+        stroke: white;
+        }
+
+        .axisWhite text{
+        fill: white;
+        }
+
+        #legend {
+        height: 70px;
+        width: 1400px;
+        padding: 10px;
+        }
+
+        div.tooltip {
+        position: absolute;
+        text-align: left;
+        width: 150px;
+        height: 150px;
+        padding: 2px;
+        font: 12px sans-serif;
+        background: white;
+        border: 2px solid black;
+        border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <svg id="exoplanets"></svg>
+</div>
+<div>
+        <div id="heading" >Exoplanets Infographic</div>
+        <div id="description" >
+            <p>The Parallel Co-ordinates Chart below visualizes a sample of 100 Exoplanets from the NASA dataset.<br>
+            Marks: Lines, Stars(background)<br>
+            Channels: Position of each line along multiple axes, Colour of line. <br>
+            Interactions: Hovering over a line shows a tooltip with detailed planet information.
+            </p>
+        </div>
+        <div id = "parallelChart" class="border border-light rounded shadow-sm">
+            <svg id="legend"></svg>
+            <svg id="parallelChart_svg" style="width:100%;height:100%;"></svg>
+        </div>
+</div>
+</body>
+</html>
